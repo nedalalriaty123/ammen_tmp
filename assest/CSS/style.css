@@ -149,26 +149,26 @@ nav form span {
 
 /* End header section */
 
+
 /* start steps section */
 
 
 section.steps {
     top: 147px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(87px, 45px));
-    align-items: center;
-    row-gap: 50px;
 }
 
 section.steps::after {
     content: "";
-    width: 90%;
+    width: 100%;
     position: absolute;
     top: 0;
-    left: 75px;
+    left: 0;
+    /* background-color: #212121; */
     height: 50%;
+    /* z-index: 1; */
     border-bottom: 1px dashed var(--Gray_dark);
 }
+
 
 section.steps .step {
     position: relative;
@@ -185,27 +185,27 @@ section.steps .step {
     cursor: pointer;
 }
 
-section.steps .step:nth-of-type(1)::after {
+section.steps .step:nth-child(1)::after {
     content: "اضافة مركبة";
 }
 
-section.steps .step:nth-of-type(2)::after {
+section.steps .step:nth-child(2)::after {
     content: "معلومات اضافية";
 }
 
-section.steps .step:nth-of-type(3)::after {
+section.steps .step:nth-child(3)::after {
     content: "السائقين";
 }
 
-section.steps .step:nth-of-type(4)::after {
+section.steps .step:nth-child(4)::after {
     content: "قائمة الأسعار";
 }
 
-section.steps .step:nth-of-type(5)::after {
+section.steps .step:nth-child(5)::after {
     content: "ملخص الطلب";
 }
 
-section.steps .step:nth-of-type(6)::after {
+section.steps .step:nth-child(6)::after {
     content: "الدفع";
 }
 
@@ -222,8 +222,16 @@ section.steps .step::after {
     right: -27px;
 }
 
-section.steps i {
-    margin-right: 13%;
+section.steps div.next {
+    position: absolute;
+    right: 10%;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section.steps div.next i {
     width: 30px;
     height: 30px;
     text-align: center;
@@ -238,109 +246,189 @@ section.steps i {
     z-index: 1;
 }
 
-section.steps i:nth-of-type(4) {
+section.steps div.next i:nth-child(4) {
     background-color: white;
     color: var(--Gray_dark);
     border-color: var(--Gray_dark);
 }
 
-section.steps i:last-of-type {
+section.steps div.next i:last-child {
     visibility: hidden;
 }
 
-@media (max-width:1275px) {
-    section.steps::after {
-        width: 73%;
-        top: -51px;
-        left: 220px;
+@media (max-width:768px) {
+    section.steps .step {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        line-height: 40px;
+    }
+
+    section.steps div.next i {
+        width: 18px;
+        height: 18px;
+        line-height: 12px;
+        font-size: 9px;
+        border: 3px solid white;
+    }
+
+    section.steps .step::after {
+        font-size: 12px;
+        right: -38px;
     }
 }
 
-@media (max-width:1159px) {
-    section.steps::after {
-        width: 83%;
-        left: 137px;
+@media (max-width:576px) {
+    section.steps {
+        display: grid !important;
+        grid-template-columns: repeat(auto-fill, minmax(132px, 1fr)) !important;
+        row-gap: 30px !important;
     }
-}
 
-@media (max-width:1043px) {
+    section.steps div.next {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(56px, 1fr));
+        row-gap: 43px;
+        right: 17%;
+        column-gap: 88px;
+        width: 87%;
+    }
+
+    section.steps div.next i {
+        width: 24px;
+        height: 24px;
+        line-height: 19px;
+        font-size: 12px;
+    }
+
+    section.steps .step::after {
+        bottom: -26px;
+    }
+
     section.steps::after {
-        width: 80%;
+        width: 91%;
+        top: -32px;
+        left: 33px;
     }
 
     section.steps::before {
         content: "";
+        width: 70%;
         position: absolute;
-        width: 25%;
-        top: 129px;
-        left: 563px;
+        top: 35px;
+        left: 109px;
+        height: 50%;
         border-bottom: 1px dashed var(--Gray_dark);
     }
 }
 
-@media (max-width:927px) {
+@media (max-width:527px) {
+    section.steps div.next {
+        right: 23%;
+    }
+
+    section.steps .step::after {
+        bottom: -25px;
+    }
+
     section.steps::after {
         width: 80%;
-        left: 137px;
+        top: -66px;
+        left: 67px;
     }
 
     section.steps::before {
-        width: 39%;
-        left: 401px;
+        width: 80%;
+        top: 1px;
+        left: 70px;
+    }
 
+    section.steps div.next::after {
+        content: "";
+        position: absolute;
+        width: 62%;
+        top: 72px;
+        left: 206px;
+        height: 50%;
+        border-bottom: 1px dashed var(--Gray_dark);
     }
 }
 
-@media (max-width:811px) {
-    section.steps::after {
-        width: 75%;
-        left: 137px;
-    }
-
-    section.steps::before {
-        width: 34%;
-        left: 389px;
-
+@media (max-width:481px) {
+    section.steps div.next::after {
+        left: 183px;
     }
 }
 
-@media (max-width:695px) {
-    section.steps::after {
-        width: 72%;
-        top: -103px;
-        left: 137px;
-    }
-
+@media (max-width:459px) {
     section.steps::before {
-        width: 54%;
-        top: 131px;
-        left: 218px;
-
+        left: 52px;
     }
 }
 
-@media (max-width:579px) {
-    section.steps::after {
-        width: 65%;
-        top: -103px;
-        left: 137px;
-    }
-
-    section.steps::before {
-        width: 65%;
-        top: 131px;
-        left: 137px;
-
+@media (max-width:425px) {
+    section.steps div.next::after {
+        left: 155px;
     }
 }
 
-@media (max-width:463px) {
+@media (max-width:390px) {
+    section.steps::before {
+        left: 34px;
+    }
+
+}
+
+@media (max-width:421px) {
     section.steps::after {
-        width: 0;
+        left: 56px;
+    }
+}
+
+@media (max-width:387px) {
+    section.steps::after {
+        left: 36px;
+    }
+}
+
+@media (max-width:351px) {
+    section.steps {
+        row-gap: 73px !important;
+        grid-template-columns: none;
+
+    }
+
+    section.steps div.next {
+        grid-template-columns: 100px;
+        row-gap: 90px;
+        right: 7px;
+        top: 60px;
+    }
+
+    section.steps div.next i {
+        transform: rotate(270deg);
+
+    }
+
+    section.steps::after {
+        border: none;
     }
 
     section.steps::before {
-        width: 0;
+        border: none;
+    }
+
+    section.steps div.next::after {
+        border: none;
+    }
+
+    section.steps .step::after {
+        bottom: 10px;
+        right: 50px;
+    }
+
+    section.steps {
+        top: 226px;
     }
 }
 
@@ -827,10 +915,12 @@ section.Offers .BoxOffers .offer .chekes label span:nth-of-type(2) {
     section.Offers .BoxOffers .offer .Grid {
         grid-template-columns: repeat(auto-fill, minmax(318px, 1fr));
     }
+
     section.Offers .BoxOffers .offer .priceOffer .price {
         width: 100%;
     }
 }
+
 @media (max-width:480px) {
     section.Offers .BoxOffers .offer .Grid>* {
         width: 95%;
@@ -845,6 +935,7 @@ section.Offers .BoxOffers .offer .chekes label span:nth-of-type(2) {
     section.Offers .BoxOffers .offer .Grid {
         grid-template-columns: repeat(auto-fill, minmax(430px, 1fr));
     }
+
     section.Offers .BoxOffers .offer .Grid .nameOffer {
         flex-direction: column;
     }
@@ -1041,6 +1132,7 @@ footer .footer-body .social {
         padding: 42px;
     }
 }
+
 @media (max-width:320px) {
     .footer-body {
         padding: 10px;
@@ -1054,4 +1146,5 @@ footer .footer-body .social {
     cursor: pointer;
     bottom: 10%;
     right: 5%;
+    z-index: 5000;
 }
