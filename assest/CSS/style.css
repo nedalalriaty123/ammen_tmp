@@ -325,7 +325,7 @@ section.steps div.next i:last-child {
         width: 40px;
         height: 40px;
         font-size: 20px;
-        line-height: 40px;
+       /* line-height: 40px; */
     }
 
     section.steps div.next i {
