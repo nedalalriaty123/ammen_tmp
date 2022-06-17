@@ -25,7 +25,12 @@
     <!-- start header section -->
 
     <nav class="navbar navbar-expand-lg navbar-light position-fixed w-100">
-        <div class="container-fluid">
+        <div class="container-fluid position-relative">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <a class="navbar-brand" href="#">
                 <svg width="139" height="68" viewBox="0 0 139 68" fill="none" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -51,13 +56,8 @@
                     </defs>
                 </svg>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav nav nav-pills m-auto mb-2 mb-lg-0" id="pills-tab" role="tablist">
+                <ul class="navbar-nav nav nav-pills mb-2 m-auto mb-lg-0" id="pills-tab" role="tablist">
                     <li class="nav-item" role="presentation">
                         <a class="nav-link active" data-bs-toggle="pill" role="tab" aria-current="page"
                             aria-selected="true" href="#">الرئيسية</a>
@@ -76,13 +76,13 @@
                     <li class="nav-item" role="presentation">
                         <a class="nav-link" data-bs-toggle="pill" role="tab" aria-selected="false" href="#">الوظائف</a>
                     </li>
-
                 </ul>
             </div>
             <form class="d-flex">
                 <a href="#">تسجيل الدخول</a>
                 <span>EN</span>
             </form>
+
         </div>
     </nav>
 
@@ -924,7 +924,8 @@
                     <feOffset dx="-3" dy="3" />
                     <feGaussianBlur stdDeviation="9" />
                     <feComposite in2="hardAlpha" operator="out" />
-                    <feColorMatrix type="matrix" values="0 0 0 0 0.360784 0 0 0 0 0.717647 0 0 0 0 0.360784 0 0 0 0.5 0" />
+                    <feColorMatrix type="matrix"
+                        values="0 0 0 0 0.360784 0 0 0 0 0.717647 0 0 0 0 0.360784 0 0 0 0.5 0" />
                     <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_496_6403" />
                     <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_496_6403" result="shape" />
                 </filter>
